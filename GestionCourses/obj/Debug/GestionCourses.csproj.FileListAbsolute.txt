@@ -1,0 +1,6 @@
+C:\Users\mattc\source\repos\GestionCourses\GestionCourses\obj\Debug\GestionCourses.csprojAssemblyReference.cache
+C:\Users\mattc\source\repos\GestionCourses\GestionCourses\obj\Debug\GestionCourses.exe.config
+C:\Users\mattc\source\repos\GestionCourses\GestionCourses\obj\Debug\GestionCourses.IhmGestionCourses.resources
+C:\Users\mattc\source\repos\GestionCourses\GestionCourses\obj\Debug\GestionCourses.Properties.Resources.resources
+C:\Users\mattc\source\repos\GestionCourses\GestionCourses\obj\Debug\GestionCourses.csproj.GenerateResource.cache
+C:\Users\mattc\source\repos\GestionCourses\GestionCourses\obj\Debug\GestionCourses.csproj.CoreCompileInputs.cache

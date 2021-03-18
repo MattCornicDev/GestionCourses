@@ -32,7 +32,7 @@ namespace GestionCourses
             Connexion = new MySqlConnection(ChaineConnexion); // Création de l'object Connexion
             EstConnecte = false; // Connexion fermée par défaut
 
-           
+
         }
 
         public bool OuvrirConnexion()
@@ -42,7 +42,7 @@ namespace GestionCourses
                 Connexion.Open();
                 EstConnecte = true;
             }
-            catch(Exception Er)
+            catch (Exception Er)
             {
                 _Erreur = Er.Message;
             }
@@ -56,7 +56,7 @@ namespace GestionCourses
                 Connexion.Close();
                 EstConnecte = false;
             }
-            catch(Exception Er)
+            catch (Exception Er)
             {
                 _Erreur = Er.Message;
             }
@@ -68,5 +68,45 @@ namespace GestionCourses
         {
             get { return _Erreur; }
         }
+
+
+        public MySqlDataReader RequeteSql(String Requete)
+        {
+            MySqlCommand CmdSql = new MySqlCommand(Requete, Connexion);
+            MySqlDataReader Reader = null;
+
+            if (EstConnecte == true)
+            {
+                try
+                {
+                    Reader = CmdSql.ExecuteReader();
+                }
+                catch (Exception Er)
+                {
+                    _Erreur = Er.Message;
+                }
+                return Reader;
+            }
+        }
+
+        public int RequeteNoData(String Requete)
+        {
+            MySqlCommand CmdSqlNoData = new MySqlCommand(Requete, Connexion);
+            int NbrLignesModifiees = 0;
+
+            if (EstConnecte == true)
+            {
+                try
+                {
+                    NbrLignesModifiees = CmdSqlNoData.ExecuteNonQuery();
+                }
+                catch (MySqlException Er)
+                {
+                    _Erreur = Er.Message;
+                }
+            }
+            return NbrLignesModifiees;
+        }
+
     }
 }
